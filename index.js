@@ -2,16 +2,17 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const passport = require("passport");
 const BasicStrategy = require("passport-local").Strategy;
+const initializeDatabase = require("./database");
 
 const app = express();
 
 passport.serializeUser(function(user, done) {
-    return done(null, user);
+  return done(null, user);
 });
 
 passport.deserializeUser(function(user, done) {
-    return done(null, user);
-})
+  return done(null, user);
+});
 
 passport.use(
   new BasicStrategy(function(username, password, done) {
@@ -28,6 +29,10 @@ app.get("*", function(request, response) {
   response.render("index");
 });
 
-app.listen(3000, function() {
-  console.log("Application started!");
+initializeDatabase(function() {
+  console.log("Database connection established!");
+  
+  app.listen(3000, function() {
+    console.log("Application started!");
+  });
 });
