@@ -1,0 +1,16 @@
+extends ../layout.pug
+
+block content
+    form(action="/users/login", method="post")
+        div
+            label(for="username")
+                div Username:
+        div
+            input(type="text", name="username")
+        div
+            label(for="password")
+                div Password:
+        div
+            input(type="text", name="password")
+
+        button(type="submit") Log in

@@ -1,18 +1,13 @@
-<!DOCTYPE html>
-html(lang="en")
-    head
-        meta(charset="UTF-8")
-        meta(name="viewport", content="width=device-width, initial-scale=1.0")
-        meta(http-equiv="X-UA-Compatible", content="ie=edge")
-        title Create a new post
-    body
-        form(action="/posts/new", method="POST", enctype="application/json")
-            div
-                label(for="title") Please enter a title
-                input(name="title")
-            div
-                label(for="body") Please enter a body
-                textarea(name="body", cols="30", rows="10")
+extends ../layout.pug
 
-            div
-                button(type="submit") Save
+block content
+    form(action="/posts/new", method="POST", enctype="application/json")
+        div
+            label(for="title") Please enter a title
+            input(name="title")
+        div
+            label(for="body") Please enter a body
+            textarea(name="body", cols="30", rows="10")
+
+        div
+            button(type="submit") Save
