@@ -3,7 +3,11 @@ const User = require("./models/User");
 const BlogPost = require("./models/BlogPost");
 
 const initialize = function(done) {
-  mongoose.connect('mongodb://db_user:x3"Lp!3VK6t\HH~R@ds127624.mlab.com:27624/heroku_1sdd1s30');
+  mongoose.connect('mongodb://ds127624.mlab.com:27624/heroku_1sdd1s30', {
+    auth: {
+      user: 'db_user',
+      pass: 'x3"Lp!3VK6t\HH~R'
+    }});
 
   const db = mongoose.connection;
 
