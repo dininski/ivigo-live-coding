@@ -50,7 +50,7 @@ initialize(function() {
   createTestUser()
     .then(createSamplePosts)
     .then(function() {
-      app.listen(3000, function() {
+      app.listen(process.env.PORT, function() {
         console.log("Application started!");
       });
     })
