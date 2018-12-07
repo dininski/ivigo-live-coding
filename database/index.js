@@ -6,7 +6,7 @@ const initialize = function(done) {
   mongoose.connect('mongodb://ds127624.mlab.com:27624/heroku_1sdd1s30', {
     auth: {
       user: 'db_user',
-      password: 'x3"Lp!3VK6t\HH~R'
+      password: 'x3"Lp!3VK6t\\HH~R'
     }});
 
   const db = mongoose.connection;
